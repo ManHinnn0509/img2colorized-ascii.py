@@ -1,2 +1,55 @@
 # img2colorized-ascii.py
-Play video in colorized ASCII
+
+Play video in colorized ASCII art in console
+
+The file [asciify.py][file_asciify.py] in this project is from [this repository][github_asciify], credits to them. (I only added a little bit changes to it for this project)
+
+I added example images & videos which are clips and screenshots from Watch_Dogs. I don't own them
+
+## Run this program
+
+Windows: `cls && python img2colorized-ascii.py` <br>
+Linux: `clear && python img2colorized-ascii.py`
+
+## Requirements / Dependencies
+
+See [requirements.txt][file_requirements]
+
+## How does it works?
+
+Steps:
+
+1) Opens the video from given path
+2) Read frame
+3) Convert the image (cv2) to PIL image
+4) Resize the PIL image
+5) Mark down each pixel's color
+6) Turn the image to ASCII art
+7) Colorized the characters with color
+8) Print out the colorized ASCII image
+9) Clears previous output
+10) Read next frame
+11) Back to Step 3
+
+## Why resizing the frame?
+
+This is because the amount of charater per line in console is limited (For me it's 100) <br>
+I resize the frame's width and height with ratio. <br>
+For example, a 1920x1080 image will be resized to 100x56
+
+## Notice
+
+* The height of each output frame is 56 (For 1920x1080 videos)
+* The speed might be slower since it does all the steps above in real time (Not pre-rendered)
+* There should be some blinking between each frame
+
+## Planned
+
+I might do these someday but not sure when :P
+
+1) Pre-render frames
+
+[file_main_py_file]: ./img2colorized-ascii.py
+[file_asciify.py]: ./asciify.py
+[file_requirements]: ./requirements.txt
+[github_asciify]: https://github.com/RameshAditya/asciify
