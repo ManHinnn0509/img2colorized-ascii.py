@@ -1,5 +1,8 @@
 # Custom
 ./rendered_frames.json
+vid/
+
+!vid/watch_dogs_intro.mp4
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
