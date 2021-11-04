@@ -12,9 +12,13 @@ def main():
         return
     
     d = readJsonFile(jsonFileName)
+
+    fps = d.pop('fps', None)
+    frameAmount = d.pop('frame_amount')
+
     for k, v in d.items():
         printImageASCII(v)
-        time.sleep(1 / 60)
+        # time.sleep(1 / fps)
 
     print("--- End of Program ---")
 

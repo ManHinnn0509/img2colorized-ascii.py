@@ -4,7 +4,7 @@ Play video in colorized ASCII art in console
 
 The file [asciify.py][file_asciify.py] in this project is from [this repository][github_asciify], credits to them. (I only added a little bit changes to it for this project)
 
-I added example images & videos which are clips and screenshots from Watch_Dogs. I don't own them
+I added example images & videos which are clips and screenshots from Watch_Dogs & Cyberpunk 2077. I don't own them
 
 ## Run this program
 

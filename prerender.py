@@ -13,17 +13,29 @@ from util.file_utils import writeJSON_File
 def main():
 
     clearScreen = "cls"
-    pathToVideo = './vid/watch_dogs_intro.mp4'
+    pathToVideo = './vid/wake_the_f_up.mp4'
     outputFile = './rendered_frames.json'
 
     vidcap = cv2.VideoCapture(pathToVideo)
+
+    fps = vidcap.get(cv2.CAP_PROP_FPS)
+    frameAmount = int(vidcap.get(cv2.CAP_PROP_FRAME_COUNT))
+    vidLen = int(frameAmount / fps)
+
     success, frame = vidcap.read()
 
     d = {}
+
+    d['fps'] = fps
+    d['frame_amount'] = frameAmount
+
+    print(f"FPS: {fps}")
+    print(f"Frame amount: {frameAmount}")
+
     frameCounter = 0
     while (success):
         k = f'frame_{frameCounter}'
-        print(f"Rendering ... {k}")
+        print(f"Rendering ... {k} ({frameCounter + 1} / {frameAmount})")
 
         img = convertFrame(frame)
         renderedFrame = render(img)
@@ -32,6 +44,8 @@ def main():
 
         success, frame = vidcap.read()
         frameCounter += 1
+    
+    vidcap.release()
 
     
     # Part that saves the rendered frames

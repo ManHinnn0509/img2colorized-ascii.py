@@ -25,6 +25,8 @@ def main():
         printImageASCII(s)
 
         success, frame = vidcap.read()
+    
+    vidcap.release()
 
 def convertFrame(frame) -> Image:
     img = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
