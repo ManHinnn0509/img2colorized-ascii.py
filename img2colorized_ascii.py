@@ -8,29 +8,36 @@ from PIL import Image
 from asciify import do
 from util.color_utils import colorizeString, genANSI_TextTrueColorCode, genANSI_BackTrueColorCode
 
-def clear():
-  print("\x1B[2J")
-
 def main():
 
     # img = Image.open('./img2.png')
     # printImageASCII(img)
 
-    pathToVidedo = './vid/watch_dogs_intro.mp4'
-    vidcap = cv2.VideoCapture(pathToVidedo)
+    pathToVideo = './vid/watch_dogs_intro.mp4'
+    vidcap = cv2.VideoCapture(pathToVideo)
     success, frame = vidcap.read()
 
     while (success):
         # Convert frame to PIL Image
-        img = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-        imgPIL = Image.fromarray(img)
+        imgPIL = convertFrame(frame)
 
-        printImageASCII(imgPIL)
+        s = render(imgPIL)
+        printImageASCII(s)
 
         success, frame = vidcap.read()
 
+def convertFrame(frame) -> Image:
+    img = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+    imgPIL = Image.fromarray(img)
 
-def printImageASCII(img):
+    return imgPIL
+
+def render(img):
+    """
+        Takes a input of PIL Image \n
+        Returns rendered colorized ASCII art of the input image
+    """
+
     # Fixed size
     newSize = (100, 56)
     img = img.resize(newSize)
@@ -82,11 +89,16 @@ def printImageASCII(img):
         # print("")
         s += "\n"
     
+    return s
+
+def printImageASCII(s: str):
+    
+    linesAmount = len(s.split("\n")) + 1
     print(s)
 
     # Erase the previous output
     # From: https://www.daniweb.com/programming/software-development/threads/428136/clear-the-screen-without-os-library
-    for _ in range(len(lines) + 1):
+    for _ in range(linesAmount):
         sys.stdout.write("\x1b[1A\x1b[2K") # move up cursor and delete whole line
 
 if (__name__ == '__main__'):

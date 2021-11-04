@@ -39,7 +39,7 @@ For example, a 1920x1080 image will be resized to 100x56
 
 ## Notice
 
-* The height of each output frame is 56 (For 1920x1080 videos)
+* The height of each output frame is 56
 * The speed might be slower since it does all the steps above in real time (Not pre-rendered)
 * There should be some blinking between each frame
 
@@ -47,9 +47,10 @@ For example, a 1920x1080 image will be resized to 100x56
 
 I might do these someday but not sure when :P
 
-1) Pre-render frames
+- [x] [Pre-render frames][file_prerender]
 
-[file_main_py_file]: ./img2colorized-ascii.py
+[file_prerender]: ./prerender.py
+[file_main_py_file]: ./img2colorized_ascii.py
 [file_asciify.py]: ./asciify.py
 [file_requirements]: ./requirements.txt
 [github_asciify]: https://github.com/RameshAditya/asciify
