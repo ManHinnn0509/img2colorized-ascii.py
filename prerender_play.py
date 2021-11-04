@@ -6,6 +6,9 @@ from util.file_utils import readJsonFile
 
 def main():
 
+    clearScreen = "cls"
+    os.system(clearScreen)
+
     jsonFileName = 'rendered_frames.json'
     if (jsonFileName not in os.listdir()):
         print("Pre-rendered frames (json file) not found!")

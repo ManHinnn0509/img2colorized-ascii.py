@@ -41,8 +41,10 @@ Steps:
 
 ## Why resizing the frame?
 
-This is because the amount of charater per line in console is limited (For me it's 100) <br>
-I resize the frame's width and height with ratio. <br>
+This is because the amount of charater per line in console is somehow limited (If I understand correctly) <br>
+In my case it's 100 characters per line <br>
+
+I resize the frame's width and height in ratio. <br>
 For example, a 1920x1080 image will be resized to 100x56
 
 ## Notice
