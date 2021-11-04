@@ -8,8 +8,16 @@ I added example images & videos which are clips and screenshots from Watch_Dogs.
 
 ## Run this program
 
-Windows: `cls && python img2colorized-ascii.py` <br>
-Linux: `clear && python img2colorized-ascii.py`
+### Real-time render & play
+
+Windows: `cls && python img2colorized_ascii.py` <br>
+Linux: `clear && python img2colorized_ascii.py`
+
+### Pre-render
+
+First, run `python prerender.py` to pre-render frames and save them as json file. (The file size might be a bit huge!)
+
+Then run `python prerender_play.py` to play the "video"
 
 ## Requirements / Dependencies
 
@@ -40,7 +48,7 @@ For example, a 1920x1080 image will be resized to 100x56
 ## Notice
 
 * The height of each output frame is 56
-* The speed might be slower since it does all the steps above in real time (Not pre-rendered)
+* The speed might be slower since it does all the steps above in real time (If pot pre-rendered)
 * There should be some blinking between each frame
 
 ## Planned
