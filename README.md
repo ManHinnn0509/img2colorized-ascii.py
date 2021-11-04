@@ -15,7 +15,7 @@ Linux: `clear && python img2colorized_ascii.py`
 
 ### Pre-render
 
-First, run `python prerender.py` to pre-render frames and save them as json file. (The file size might be a bit huge!)
+First, run `python prerender.py` to pre-render frames and save them as json file. (The file size might be a bit large!)
 
 Then run `python prerender_play.py` to play the "video"
 
