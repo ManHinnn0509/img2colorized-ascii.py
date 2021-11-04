@@ -50,7 +50,7 @@ For example, a 1920x1080 image will be resized to 100x56
 ## Notice
 
 * The height of each output frame is 56
-* The speed might be slower since it does all the steps above in real time (If pot pre-rendered)
+* The speed might be slower since it does all the steps above in real time (If it's not pre-rendered)
 * There should be some blinking between each frame
 
 ## Planned
