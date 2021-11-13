@@ -13,7 +13,7 @@ from util.file_utils import writeJSON_File
 def main():
 
     clearScreen = "cls"
-    pathToVideo = './vid/wake_the_f_up.mp4'
+    pathToVideo = './vid/ricardo.mp4'
     outputFile = './rendered_frames.json'
 
     vidcap = cv2.VideoCapture(pathToVideo)
